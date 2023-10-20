@@ -10,4 +10,24 @@ $(document).ready(function(){
             $("#mensaje").text("Formulario enviado correctamente.");
         }
     });
+
+    var indice =0;
+    var imagenes = $(".imagen");
+
+    function mostrarImagen(){
+        imagenes.hide();
+        imagenes.eq(indice).show();
+    }
+
+    mostrarImagen();
+
+    $("#anterior").click(function(){
+        indice = (indice - 1 + imagenes.length) % imagenes.length;
+        mostrarImagen();
+    });
+
+    $("#siguiente").click(function(){
+        indice = (indice + 1) % imagenes.length;
+        mostrarImagen();
+    });
 });

@@ -12,22 +12,22 @@ $(document).ready(function(){
     });
 
     var indice =0;
-    var imagenes = $(".imagen");
+    var images = $(".imagen");
 
     function mostrarImagen(){
-        imagenes.hide();
-        imagenes.eq(indice).show();
+        images.hide();
+        images.eq(indice).show();
     }
 
     mostrarImagen();
 
     $("#anterior").click(function(){
-        indice = (indice - 1 + imagenes.length) % imagenes.length;
+        indice = (indice - 1 + images.length) % images.length;
         mostrarImagen();
     });
 
     $("#siguiente").click(function(){
-        indice = (indice + 1) % imagenes.length;
+        indice = (indice + 1) % images.length;
         mostrarImagen();
     });
 });
